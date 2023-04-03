@@ -17,7 +17,7 @@ public class ShowBookingApplication {
 
     public static void main(String[] args) throws Exception {
         SpringApplication.run(ShowBookingApplication.class, args);
-        commandLineRunner.mockConsole();
+//         commandLineRunner.mockConsole();
         while (true) {
             commandLineRunner.getInput();
         }
