@@ -1,0 +1,44 @@
+## Show Booking Application
+This is a simple Java Spring Boot application for the use case of booking a show. The program must take input from command line.
+
+### Getting Started
+1. Clone the repository to your local machine.
+2. Maven install packages
+3. Run ShowBookingApplication
+
+### Features
+The program would setup available seats per show, allow buyers to select 1 or more available seats and buy/cancel tickets.
+
+The application shall cater to the below 2 types of users & their requirements – (1) Admin and (2) Buyer
+
+__Admin__ – The users should be able to Setup and view the list of shows and seat allocations.
+Commands to be implemented for Admin :
+
+1.         Setup  <Show Number> <Number of Rows> <Number of seats per row>  <Cancellation window in minutes>  
+
+(To setup the number of seats per show)
+
+2.         View <Show Number>    
+
+(To display Show Number, Ticket#, Buyer Phone#, Seat Numbers allocated to the buyer)
+
+__Buyer__ – The users should be able retrieve list of available seats for a show, select 1 or more seats , buy and cancel tickets.
+Commands to be implemented for Buyer :
+
+1.       Availability  <Show Number>   
+
+(To list all available seat numbers for a show. E,g A1, F4 etc)
+
+2.       Book  <Show Number> <Phone#> <Comma separated list of seats> 
+
+(To book a ticket. This must generate a unique ticket # and display)
+
+3.       Cancel  <Ticket#>  <Phone#>
+
+(To cancel a ticket. See constraints in the section below)
+
+### Constraints:
+
+- Assume max seats per row is 10 and max rows are 26. Example seat number A1,  H5 etc. The “Add” command for admin must ensure rows cannot be added beyond the upper limit of 26.
+- After booking, User can cancel the seats within a time window of 2 minutes (configurable).   Cancellation after that is not allowed.
+- Only one booking per phone# is allowed per show.
